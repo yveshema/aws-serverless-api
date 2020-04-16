@@ -5,7 +5,7 @@ import util from "util";
 AWS.config.logger = { log: debug };
 
 let logs;
-let timeouttimer;
+let timeoutTimer;
 
 export function init(event, context) {
     logs = [];
@@ -23,7 +23,7 @@ export function init(event, context) {
 
 export function end() {
     // Clear timeout timer
-    clearTimerout(timeoutTimer);
+    clearTimeout(timeoutTimer);
     timeoutTimer = null;
 }
 
