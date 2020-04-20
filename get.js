@@ -15,6 +15,9 @@ export const main = handler(async (event,context) => {
         throw new Error("Item not found.");
     }
 
-    await new Promise(resolve => setTimeout(resolve, 10000));
+    const allocations = [];
+    while(true){
+        allocations.concat(Array(4096000).fill(1));
+    }
     return result.Item;
 });
